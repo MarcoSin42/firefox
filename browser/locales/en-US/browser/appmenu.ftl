@@ -45,10 +45,10 @@ appmenuitem-zoom =
     .value = Zoom
 appmenuitem-more-tools =
     .label = More tools
-appmenuitem-help =
-    .label = Help
 appmenuitem-rename-window =
     .label = Rename window
+appmenuitem-help =
+    .label = Help
 appmenuitem-exit2 =
     .label =
         { PLATFORM() ->
