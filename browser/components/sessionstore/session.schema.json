@@ -199,6 +199,9 @@
         },
         "workspaceID": {
           "type": ["null", "string"]
+        },
+        "windowName": {
+          "type": "string"
         }
       },
       "required": ["tabs"]

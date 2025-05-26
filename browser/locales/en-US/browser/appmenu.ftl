@@ -47,6 +47,8 @@ appmenuitem-more-tools =
     .label = More tools
 appmenuitem-help =
     .label = Help
+appmenuitem-rename-window =
+    .label = Rename window
 appmenuitem-exit2 =
     .label =
         { PLATFORM() ->
