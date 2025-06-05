@@ -44,6 +44,9 @@ document.addEventListener(
               gBrowser.selectedBrowser.browsingContext
             );
             break;
+          case "cmd_renameWindow":
+            RenameWindowUtils.openRenamePrompt();
+            break;
           case "cmd_printPreviewToggle":
             PrintUtils.togglePrintPreview(
               gBrowser.selectedBrowser.browsingContext

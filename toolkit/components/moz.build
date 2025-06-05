@@ -66,6 +66,7 @@ DIRS += [
     "promiseworker",
     "prompts",
     "protobuf",
+    "renamewindowutils",
     "remotebrowserutils",
     "reflect",
     "reputationservice",

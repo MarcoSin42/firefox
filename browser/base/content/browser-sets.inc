@@ -36,6 +36,7 @@
     <command id="cmd_minimizeWindow" />
     <command id="cmd_maximizeWindow" />
     <command id="cmd_restoreWindow" />
+    <command id="cmd_renameWindow" />
     <command id="cmd_toggleMute" />
     <command id="cmd_CustomizeToolbars" />
     <command id="cmd_toggleOfflineStatus" />
@@ -308,9 +309,7 @@
 
     <key id="key_fullZoomReduce" data-l10n-id="full-zoom-reduce-shortcut" command="cmd_fullZoomReduce"  modifiers="accel"/>
     <key                         data-l10n-id="full-zoom-reduce-shortcut-alt-a" command="cmd_fullZoomReduce"  modifiers="accel"/>
-    <key                         data-l10n-id="full-zoom-reduce-shortcut-alt-b" command="cmd_fullZoomReduce"  modifiers="accel"/>
-    <key id="key_fullZoomEnlarge" data-l10n-id="full-zoom-enlarge-shortcut" command="cmd_fullZoomEnlarge" modifiers="accel"/>
-    <key                          data-l10n-id="full-zoom-enlarge-shortcut-alt" command="cmd_fullZoomEnlarge" modifiers="accel"/>
+    <key                         data-l10n-id="full-zoom-reduce-shortcut-alt-b" cocommand="cmd_fullZoomEnlarge" modifiers="accel"/>
     <key                          data-l10n-id="full-zoom-enlarge-shortcut-alt2" command="cmd_fullZoomEnlarge" modifiers="accel"/>
     <key id="key_fullZoomReset"   data-l10n-id="full-zoom-reset-shortcut"    command="cmd_fullZoomReset"   modifiers="accel"/>
     <key                          data-l10n-id="full-zoom-reset-shortcut-alt"   command="cmd_fullZoomReset"   modifiers="accel"/>
