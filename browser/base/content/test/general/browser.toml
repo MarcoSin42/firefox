@@ -364,6 +364,9 @@ support-files = [
 ]
 # DO NOT ADD MORE TESTS HERE. USE A TOPICAL DIRECTORY INSTEAD.
 
+["browser_rename_window.js"]
+# DO NOT ADD MORE TESTS HERE. USE A TOPICAL DIRECTORY INSTEAD.
+
 ["browser_remoteTroubleshoot.js"]
 https_first_disabled = true
 run-if = ["updater"]

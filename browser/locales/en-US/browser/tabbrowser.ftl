@@ -338,3 +338,7 @@ tab-group-context-open-saved-group-in-this-window =
 # open the tab group in that window.
 tab-group-context-open-saved-group-in-new-window =
     .label = Open Group in New Window
+
+main-window-rename-window =
+    .label = Rename Window…
+    .accesskey = R

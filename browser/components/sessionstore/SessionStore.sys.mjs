@@ -5587,6 +5587,9 @@ var SessionStoreInternal = {
     winData.selected = selectedIndex;
 
     this._updateWindowFeatures(aWindow);
+    if (aWindow.gBrowser._windowRenames && aWindow.gBrowser.permanentKey && aWindow.gBrowser._windowRenames[aWindow.gBrowser.permanentKey]) {
+      winData.customTitle = aWindow.gBrowser._windowRenames[aWindow.gBrowser.permanentKey];
+    }
 
     // Make sure we keep __SS_lastSessionWindowID around for cases like entering
     // or leaving PB mode.
@@ -5837,6 +5840,14 @@ var SessionStoreInternal = {
     // Restore tabs, if any.
     if (winData.tabs.length) {
       this.restoreTabs(aWindow, tabs, winData.tabs, selectTab);
+    }
+
+    if (winData.customTitle) {
+      aWindow.document.documentElement.setAttribute("customTitle", winData.customTitle);
+      if (!aWindow.gBrowser._windowRenames) {
+        aWindow.gBrowser._windowRenames = {};
+      }
+      aWindow.gBrowser._windowRenames[aWindow.gBrowser.permanentKey] = winData.customTitle;
     }
 
     // set smoothScroll back to the original value

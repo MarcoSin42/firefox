@@ -2010,6 +2010,38 @@ var XULBrowserWindow = {
     return gBrowser.tabs.length;
   },
 
+  renameWindow() {
+    let bundle = Services.strings.createBundle("chrome://browser/locale/browser.properties");
+    let currentName = document.documentElement.getAttribute("customTitle") || "";
+    let promptTitle = bundle.GetStringFromName("renameWindow.title");
+    let promptText = bundle.GetStringFromName("renameWindow.text");
+
+    let newName = { value: currentName };
+    let ok = Services.prompt.promptPasswordBC(
+      null, // No parent window
+      promptTitle,
+      promptText,
+      newName,
+      null, // No checkbox
+      Ci.nsIPrompt.BUTTON_POS_0 * Ci.nsIPrompt.BUTTON_TITLE_OK +
+      Ci.nsIPrompt.BUTTON_POS_1 * Ci.nsIPrompt.BUTTON_TITLE_CANCEL,
+      null, // Default button (OK)
+      null, // Cancel button
+      null, // Help button
+      null, // Password check function
+      null  // Password check params
+    );
+
+    if (ok && newName.value) {
+      document.documentElement.setAttribute("customTitle", newName.value);
+      if (!this._windowRenames) {
+        this._windowRenames = {};
+      }
+      this._windowRenames[this.permanentKey] = newName.value;
+      SessionStore.setCustomWindowState();
+    }
+  },
+
   onProgressChange() {
     // Do nothing.
   },
