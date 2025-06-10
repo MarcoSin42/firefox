@@ -13,23 +13,34 @@
 const lazy = {};
 ChromeUtils.defineESModuleGetters(lazy, {
   PromptUtils: "resource://gre/modules/PromptUtils.sys.mjs",
+  SessionStore: "resource:///modules/sessionstore/SessionStore.sys.mjs",
 });
+
 export const RenameWindowUtils = {
-  openRenamePrompt() {
+  openRenamePrompt(window) {
+    let aWindow = window;
+    let oldTitle = lazy.SessionStore.getCustomWindowValue(aWindow, "customTitle");
+    console.log("Previously set title: " + oldTitle);
     // Object for checkbox state to pass by reference.
     let check = { value: false };
     let newTitle = {};
     let userinput = {};
-    let object;
-    // Prompt synchronously and store result
+
+    if (!aWindow)
+      console.log("NULLED NAME");
+
     let confirmed = Services.prompt.prompt(
       null, // Dom window
       "Rename window", // Title
-      "", // Text
+      "New window title:", // Text
       newTitle, // Value - contains new title
-      "", // Check Label
+      null, // Check Label
       userinput
     );
-    console.log(confirmed);
+    lazy.SessionStore.setCustomWindowValue(aWindow, "customTitle", newTitle.value);
+    oldTitle = lazy.SessionStore.getCustomWindowValue(aWindow, "customTitle");
+    console.log("Set title: " + oldTitle);
+    if (confirmed)
+      console.log(newTitle);
   }
 }

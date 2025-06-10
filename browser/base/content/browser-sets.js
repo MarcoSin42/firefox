@@ -45,7 +45,9 @@ document.addEventListener(
             );
             break;
           case "cmd_renameWindow":
-            RenameWindowUtils.openRenamePrompt();
+            RenameWindowUtils.openRenamePrompt(
+              window
+            );
             break;
           case "cmd_printPreviewToggle":
             PrintUtils.togglePrintPreview(

@@ -815,6 +815,9 @@ BrowserGlue.prototype = {
       }
     });
 
+    if (lazy.SessionStore.getCustomWindowValue(aWindow, "customTitle"))
+      console.log("Custom title found");
+
     this._maybeOfferProfileReset();
 
     this._checkForOldBuildUpdates();
