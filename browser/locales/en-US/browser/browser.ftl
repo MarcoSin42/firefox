@@ -71,7 +71,7 @@ browser-main-window-titles-mac =
 # This should match the `data-title-default` attribute in both
 # `browser-main-window` and `browser-main-window-mac`.
 browser-main-window-default-title = { -brand-full-name }
-browser-main-window-custom-title = { -custom-title }
+browser-main-window-custom-title = { $custom-title }
 
 # The non-variable portion of this MUST match the translation of
 # "PRIVATE_BROWSING_SHORTCUT_TITLE" in custom.properties
